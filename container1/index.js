@@ -26,7 +26,7 @@ app.post("/calculate", async (request, response) => {
 
   try {
     // validate input json
-    if (!file || typeof file !== "string" || !data || typeof data !== "string") {
+    if (!file || typeof file !== "string" || !product || typeof product !== "string") {
       return response.status(400).json({
         file: null,
         error: "Invalid JSON input.",
@@ -47,7 +47,7 @@ app.post("/calculate", async (request, response) => {
       file,
       product,
     });
-    return response.json(resp.data);
+    return response.json(resp.product);
   } catch (error) {
     console.error("Error processing /calculate:", error.message);
 
@@ -79,19 +79,6 @@ app.post("/store-file", (request, response) => {
   // file name not provided / file not found / data not found
   // if (!file || !data) {
   if(!file || typeof file !== "string" || !data || typeof data !== "string") {
-    return response.status(400).json({
-      file: null,
-      error: "Invalid JSON input.",
-    });
-  }
-
-  if (file === null || typeof file !== "string" || file.trim() === "") {
-    return response.status(400).json({
-      file: null,
-      error: "Invalid JSON input.",
-    });
-  }
-  if (data === null || typeof data !== "string" || data.trim() === "") {
     return response.status(400).json({
       file: null,
       error: "Invalid JSON input.",
