@@ -26,7 +26,7 @@ app.post("/calculate", async (request, response) => {
 
   try {
     // validate input json
-    if (!file || typeof file !== "string" || !product || typeof product !== "string") {
+    if (!file) {
       return response.status(400).json({
         file: null,
         error: "Invalid JSON input.",
@@ -78,7 +78,7 @@ app.post("/store-file", (request, response) => {
 
   // file name not provided / file not found / data not found
   // if (!file || !data) {
-  if(!file || typeof file !== "string" || !data || typeof data !== "string") {
+  if(!file || !data) {
     return response.status(400).json({
       file: null,
       error: "Invalid JSON input.",
