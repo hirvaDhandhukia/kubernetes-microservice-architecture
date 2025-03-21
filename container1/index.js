@@ -80,7 +80,7 @@ app.post("/store-file", (request, response) => {
   // if (!file || !data) {
   if(!file || typeof file !== "string" || !data || typeof data !== "string") {
     return response.status(400).json({
-      file: null,
+      file: "null",
       error: "Invalid JSON input.",
     });
   }
