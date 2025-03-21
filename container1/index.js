@@ -47,7 +47,7 @@ app.post("/calculate", async (request, response) => {
       file,
       product,
     });
-    return response.json(resp.product);
+    return response.json(resp.data);
   } catch (error) {
     console.error("Error processing /calculate:", error.message);
 
