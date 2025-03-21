@@ -75,6 +75,7 @@ app.post("/store-file", (request, response) => {
 
   const { file, data } = request.body;
   const filePath = path.join(rootPath, file);
+  console.log("checking file path:" + filePath);
 
   // file name not provided / file not found / data not found
   // if (!file || !data) {
