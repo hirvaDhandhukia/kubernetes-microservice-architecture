@@ -85,6 +85,19 @@ app.post("/store-file", (request, response) => {
     });
   }
 
+  if (file === null || typeof file !== "string" || file.trim() === "") {
+    return response.status(400).json({
+      file: null,
+      error: "Invalid JSON input.",
+    });
+  }
+  if (data === null || typeof data !== "string" || data.trim() === "") {
+    return response.status(400).json({
+      file: null,
+      error: "Invalid JSON input.",
+    });
+  }
+
   // check of file stored successfully
   try {
     fs.writeFileSync(filePath, data);
