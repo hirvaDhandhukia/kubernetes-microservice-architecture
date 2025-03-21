@@ -36,8 +36,8 @@ spec:
               mountPath: "/hirva_PV_dir"
         env:
             - name: CONTAINER2_URL
-              value: http://container2-service:6001 #env for calling c2 service
-              #value: http://container2-service.default.svc.cluster.local:6001
+              #value: http://container2-service:6001 #env for calling c2 service
+              value: http://container2-service.default.svc.cluster.local:6001
       volumes: 
         - name: my-volume
           persistentVolumeClaim:
