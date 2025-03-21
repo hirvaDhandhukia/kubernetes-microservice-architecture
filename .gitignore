@@ -1,0 +1,3 @@
+node_modules/
+terraform/.terraform/
+terraform/k8s-hirva-3ccb798c8225.json
