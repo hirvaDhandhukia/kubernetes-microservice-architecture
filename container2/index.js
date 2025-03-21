@@ -14,7 +14,7 @@ app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ extended: false }))
 
 app.listen(portNum, ()=>{
-    console.log(`Server of c2 started on localhost port ${portNum}`);
+    console.log(`Server of c2 started on the localhost port ${portNum}`);
 });
 
 let stream;
