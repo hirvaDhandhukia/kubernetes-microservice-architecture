@@ -67,7 +67,7 @@ app.post("/process", (request, response)=>{
         }
         else {
             response.send({
-                file: fileName,
+                file,
                 error: "Input file not in CSV format."
             });
         }
