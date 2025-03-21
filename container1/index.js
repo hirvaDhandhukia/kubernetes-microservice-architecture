@@ -17,7 +17,7 @@ app.listen(portNum, () => {
   console.log(`Server of c1 started on localhost port ${portNum}`);
 });
 
-// call c2 /process endpoint with the payload in the request & relay response to user
+// call c2 /process endpoint wth the payload in the request & relay response to user
 app.post("/calculate", async (request, response) => {
   response.setHeader("content-type", "application/json");
 
