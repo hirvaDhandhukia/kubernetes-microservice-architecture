@@ -28,7 +28,7 @@ app.post("/calculate", async (request, response) => {
     // validate input json
     if (!file) {
       return response.status(400).json({
-        file: null,
+        file,
         error: "Invalid JSON input.",
       });
     }

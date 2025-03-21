@@ -40,8 +40,8 @@ app.post("/process", (request, response)=>{
         console.log("error occurred while parsing given file",err);
         error = true;
         response.send({
-            "file": fileName,
-            "error": "Input file not in CSV format."
+            file: fileName,
+            error: "Input file not in CSV format."
         });
         stream.destroy();
     })
@@ -61,14 +61,14 @@ app.post("/process", (request, response)=>{
         stream.destroy();
         if(!error){
             response.send({
-                "file": fileName,
-                "sum": collection[productName] || 0
+                file: fileName,
+                sum: collection[productName] || 0
             });
         }
         else {
             response.send({
-                "file": fileName,
-                "error": "Input file not in CSV format."
+                file: fileName,
+                error: "Input file not in CSV format."
             });
         }
     });
