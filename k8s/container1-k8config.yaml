@@ -28,7 +28,7 @@ spec:
     spec:
       containers:
       - name: container1
-        image: hirvacodes/container1:latest #url to docker img
+        image: us-central1-docker.pkg.dev/k8s-hirva/kube-repo/container1:latest #url to docker img
         ports:
         - containerPort: 6000
         volumeMounts:
