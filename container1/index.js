@@ -23,7 +23,7 @@ app.post("/calculate", async (request, response) => {
   response.setHeader("content-type", "application/json");
 
   const { file, product } = request.body;
-  console.log(product)
+  console.log("new log", product)
   try {
     // validate input json
     if (!file) {
