@@ -77,7 +77,8 @@ app.post("/store-file", (request, response) => {
   const filePath = path.join(rootPath, file);
 
   // file name not provided / file not found / data not found
-  if (!file || !data) {
+  // if (!file || !data) {
+  if(!file || typeof file !== "string" || !data || typeof data !== "string") {
     return response.status(400).json({
       file: null,
       error: "Invalid JSON input.",
