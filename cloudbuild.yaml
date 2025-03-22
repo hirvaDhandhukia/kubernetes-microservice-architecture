@@ -25,9 +25,9 @@ steps:
       - '${_ARTIFACT_REGISTRY}/container1:latest'
       # - '-t'
       # - '${_ARTIFACT_REGISTRY}/container1:${_SHORT_SHA}'
-      - '-f'
-      - 'container1/Dockerfile'
-      # - 'container1/'
+      # - '-f'
+      # - 'container1/Dockerfile'
+      - 'container1/'
 
   # Push c1 to AR
   - name: 'gcr.io/cloud-builders/docker'
@@ -52,9 +52,9 @@ steps:
       - '${_ARTIFACT_REGISTRY}/container2:latest'
       # - '-t'
       # - '${_ARTIFACT_REGISTRY}/container2:${_SHORT_SHA}'
-      - '-f'
-      - 'container2/Dockerfile'
-      # - 'container2/'
+      # - '-f'
+      # - 'container2/Dockerfile'
+      - 'container2/'
 
   # Push c2 to AR
   - name: 'gcr.io/cloud-builders/docker'
