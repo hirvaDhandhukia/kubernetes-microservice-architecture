@@ -29,6 +29,7 @@ spec:
       containers:
       - name: container2
         image: us-central1-docker.pkg.dev/k8s-hirva/kube-repo/container2:latest #image path
+        imagePullPolicy: Always
         ports:
         - containerPort: 6001
         volumeMounts:
