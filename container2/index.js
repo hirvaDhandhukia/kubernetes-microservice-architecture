@@ -56,6 +56,7 @@ app.post("/process", (request, response)=>{
         rowNum++;
     })
     .on('end', () => {
+        // watching amount after calculating
         console.log(`Amount is ${collection[productName]}`);
         stream.destroy();
         if(!error){

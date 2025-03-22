@@ -18,7 +18,6 @@ app.listen(portNum, () => {
 });
 
 // call c2 /process endpoint with the payload in the request & relay response to user
-// unnecessary change 1
 app.post("/calculate", async (request, response) => {
   response.setHeader("content-type", "application/json");
   console.log("request 2", request.body)
@@ -73,6 +72,7 @@ app.post("/store-file", (request, response) => {
   // store in k8 pv in override(write) mode
   response.setHeader("content-type", "application/json");
 
+  // file name not provided / file not found / data not found
   const { file, data } = request.body;
   if(!file || !data) {
     return response.status(400).json({
@@ -80,12 +80,10 @@ app.post("/store-file", (request, response) => {
       error: "Invalid JSON input.",
     });
   }
+
   const filePath = path.join(rootPath, file);
   console.log("checking file path:" + filePath);
 
-  // file name not provided / file not found / data not found
-  // if (!file || !data) {
-  
 
   // check of file stored successfully
   try {
