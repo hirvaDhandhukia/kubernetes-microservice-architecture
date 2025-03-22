@@ -74,17 +74,18 @@ app.post("/store-file", (request, response) => {
   response.setHeader("content-type", "application/json");
 
   const { file, data } = request.body;
-  const filePath = path.join(rootPath, file);
-  console.log("checking file path:" + filePath);
-
-  // file name not provided / file not found / data not found
-  // if (!file || !data) {
   if(!file || !data) {
     return response.status(400).json({
       file: null,
       error: "Invalid JSON input.",
     });
   }
+  const filePath = path.join(rootPath, file);
+  console.log("checking file path:" + filePath);
+
+  // file name not provided / file not found / data not found
+  // if (!file || !data) {
+  
 
   // check of file stored successfully
   try {
