@@ -21,7 +21,7 @@ app.listen(portNum, () => {
 // unnecessary change 1
 app.post("/calculate", async (request, response) => {
   response.setHeader("content-type", "application/json");
-  console.log("request", request.body)
+  console.log("request 2", request.body)
   const { file, product } = request.body;
   console.log("new log", product)
   try {

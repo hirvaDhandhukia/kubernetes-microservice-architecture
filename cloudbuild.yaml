@@ -68,7 +68,6 @@ steps:
   #   args:
   #     - 'push'
   #     - '${_ARTIFACT_REGISTRY}/container2:${_SHORT_SHA}'
-
   # Step 3: Deploy to GKE
   - name: 'gcr.io/cloud-builders/kubectl'
     id: 'Deploy to GKE'
@@ -79,6 +78,14 @@ steps:
     env:
       - 'CLOUDSDK_COMPUTE_ZONE=${_GKE_ZONE}'
       - 'CLOUDSDK_CONTAINER_CLUSTER=${_GKE_CLUSTER}'
+    
+  - name: "gcr.io/cloud-builders/kubectl"
+    entrypoint: "bash"
+    args:
+      - "-c"
+      - |
+        kubectl rollout restart deployment container1-deployment
+        kubectl rollout restart deployment container2-deployment
 
 # Define the artifacts (Docker images) to be stored in Artifact Registry
 # images:
