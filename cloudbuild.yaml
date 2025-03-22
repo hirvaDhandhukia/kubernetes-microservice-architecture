@@ -81,9 +81,9 @@ steps:
       - 'CLOUDSDK_CONTAINER_CLUSTER=${_GKE_CLUSTER}'
 
 # Define the artifacts (Docker images) to be stored in Artifact Registry
-images:
-  - '${_ARTIFACT_REGISTRY}/container1:latest'
-  - '${_ARTIFACT_REGISTRY}/container2:latest'
+# images:
+#   - '${_ARTIFACT_REGISTRY}/container1:latest'
+#   - '${_ARTIFACT_REGISTRY}/container2:latest'
 
 # Define the trigger for the pipeline
 # trigger:
